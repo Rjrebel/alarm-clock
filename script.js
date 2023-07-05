@@ -39,7 +39,9 @@ const getAlarms = () => {
 
 // Rendering the list of Alarms
 const renderAlarms = () => {
-  const alarms = getAlarms().alarmArrayLS;
+  let alarms = getAlarms().alarmArrayLS;
+
+  alarms = alarms == null ? [] : alarms;
 
   alarmsHeading.textContent = alarms.length == 0 ? "No Alarms Set" : "Alarms";
   list.innerHTML = "";
